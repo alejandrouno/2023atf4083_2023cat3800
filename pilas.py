@@ -22,4 +22,30 @@ class Pila:
         self.longitud -= 1
         return valor
 
+    def esta_vacia(self) -> bool:
+        return self.tope is None
 
+    def ver_cima(self):
+        if self.esta_vacia():
+            raise IndexError("La pila está vacía")
+        return self.tope.valor
+
+    def obtener_longitud(self) -> int:
+        return self.longitud
+
+
+pila = Pila()
+
+pila.apilar(10)
+pila.apilar(20)
+pila.apilar(30)
+
+print("Cima de la pila:", pila.ver_cima())  
+print("Longitud de la pila:", pila.obtener_longitud())  
+print("Elemento desapilado:", pila.desapilar())  
+print("Elemento desapilado:", pila.desapilar())  
+print("¿La pila está vacía?", pila.esta_vacia())  
+print("Longitud de la pila:", pila.obtener_longitud())  
+print("Elemento desapilado:", pila.desapilar())  
+print("¿La pila está vacía?", pila.esta_vacia())  
+print("Longitud de la pila:", pila.obtener_longitud())  
